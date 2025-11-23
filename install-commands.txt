@@ -1,0 +1,23 @@
+Установка Eslint и Pretiter
+1) npm create vite@latest
+Установка vue и typescript
+2) npm install -D eslint @eslint/js
+Основные пакеты ESLint
+3) npm install -D typescript @types/node
+   npm install -D typescript-eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+TypeScript + ESLint
+4) npm install -D eslint-plugin-vue vue-eslint-parser
+Vue + ESLint
+5) npm install -D prettier eslint-config-prettier
+Prettier + интеграция с ESLint
+6) npm install -D @vue/tsconfig globals
+Дополнительно (как в конфиге Vue/TS)
+7) npm install -D vue-tsc
+Одной командой
+npm install -D eslint @eslint/js typescript @types/node typescript-eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-vue vue-eslint-parser prettier eslint-config-prettier @vue/tsconfig globals
+
+Для установки того что надо для ssr
+npm install @vue/server-renderer compression dotenv express
+
+Для установки pinia и vue-router
+npm install pinia vue-router

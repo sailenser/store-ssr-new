@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Store" />
+    <meta name="keywords" content="Store" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Max" />
+    <meta name="сopyright" content="Max" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store SSr</title>
+  </head>
+  <body>
+    <div id="app"><!--ssr-outlet--></div>
+
+    <!--Обязательное подключение клиента для гидрадации--->
+    <script type="module" src="/src/entry-client.ts"></script>
+  </body>
+</html>
