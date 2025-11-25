@@ -1,11 +1,12 @@
-import { createApp } from './app';
+import { makeApp } from './app';
 
 export default async function runApp(context: any) {
-  const { app, router } = createApp();
+  const apiCache = {};
+  const { app, router } = makeApp({ ssr: true, apiCache });
 
   router.push(context.url);
 
   await Promise.all([await router.isReady()]);
 
-  return { app, router };
+  return { app, router, apiCache };
 }

@@ -1,5 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
-  <div>About</div>
+  <div>
+    <h1>About</h1>
+  </div>
 </template>

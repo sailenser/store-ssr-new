@@ -6,6 +6,7 @@ import express from 'express';
 import compression from 'compression';
 import { createServer as createViteServer } from 'vite';
 import { renderToString } from 'vue/server-renderer';
+import serialize from 'serialize-javascript';
 
 //Подгружаем конфиг .env
 dotenv.config();
@@ -43,7 +44,7 @@ async function createExpressServer() {
       // 3. Получаем функцию файла результата результата серверной сборки SSR
       const createServerApp = (await vite.ssrLoadModule('/src/entry-server.js')).default;
 
-      const { app, router } = await createServerApp({ url });
+      const { app, router, apiCache } = await createServerApp({ url });
 
       const { matched } = router.currentRoute.value;
       const noSsrPage = matched.some(r => r.meta.guest || r.meta.auth);
@@ -52,18 +53,18 @@ async function createExpressServer() {
         const innerHtml = await renderToString(app);
         template = template.replace(`<!--ssr-outlet-->`, innerHtml);
       }
-      // 4. Делаем рендеринг приложения в формате HTML(т.е. тут только внутрянка то что внутри страницы между body)
-      // const appHtml = await render(url);
 
-      // 5. Вставка в шаблон HTML-код, созданный приложением.
-      // let html = template.replace(`<!--ssr-outlet-->`, () => appHtml.html);
+      const serverData = {
+        ssr: !noSsrPage,
+        apiCache,
+      };
 
-      // html = html.replace(
-      //   '</head>',
-      //   `<link rel="stylesheet" href="/css/reset.css">\n</head>`
-      // );
+      template = template.replace(
+        '<!--ssr-data-->',
+        `<script>window.appServerData = ${serialize(serverData, { isJSON: true })}</script>`
+      );
 
-      // 6. Отправьте на сервер отрисованный HTML-код.
+      // 6. Отправить на сервер отрисованный HTML-код.
       res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
     } catch (e) {
       vite.ssrFixStacktrace(e);
