@@ -1,6 +1,10 @@
 import { createApp } from './app';
 // import './styles/index.scss';
 
-const { app } = createApp();
+(async function () {
+  const { app, router } = createApp();
 
-app.mount('#app');
+  await router.isReady();
+
+  app.mount('#app');
+})();

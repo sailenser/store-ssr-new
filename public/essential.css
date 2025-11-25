@@ -1,0 +1,33 @@
+body {
+  min-height: 100%;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: hsl(0, 0%, 13%);
+  padding: 20px;
+  min-height: 70px;
+}
+
+.page-blog__content {
+  font-size: 16px;
+  color: #333;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 20px;
+}
+
+.page-footer {
+  background: hsl(0, 0%, 13%);
+  text-align: center;
+  padding: 15px;
+}
