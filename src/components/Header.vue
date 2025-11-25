@@ -2,16 +2,23 @@
 
 <template>
   <header class="page-header">
-    <nav class="page-header__nav">
-      <ul>
-        <li class="header-navigation-list__item">
-          <RouterLink :to="{ name: 'home' }" class="header-navigation-list__link">
-            Главная
+    <RouterLink :to="{ name: 'home' }" class="page-header__logo"> Logo </RouterLink>
+    <nav class="page-header-nav page-header__nav">
+      <ul class="page-header-nav__list">
+        <li class="page-header-nav__item"></li>
+        <li class="page-header-nav__item">
+          <RouterLink :to="{ name: 'about' }" class="page-header-nav__link">
+            О нас
           </RouterLink>
         </li>
-        <li class="header-navigation-list__item">
-          <RouterLink :to="{ name: 'about' }" class="header-navigation-list__link">
-            О нас
+        <li class="page-header-nav__item">
+          <RouterLink :to="{ name: 'auth.login' }" class="page-header-nav__link">
+            Вход
+          </RouterLink>
+        </li>
+        <li class="page-header-nav__item">
+          <RouterLink :to="{ name: 'auth.registration' }" class="page-header-nav__link">
+            Регистрация
           </RouterLink>
         </li>
       </ul>

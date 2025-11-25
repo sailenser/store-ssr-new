@@ -10,5 +10,19 @@
   "bracketSameLine": false,
   "arrowParens": "avoid",
   "vueIndentScriptAndStyle": true,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.{css,scss,less}",
+      "options": {
+        "tabWidth": 4
+      }
+    },
+    {
+      "files": "*.{ts}",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }

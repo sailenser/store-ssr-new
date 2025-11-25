@@ -4,6 +4,8 @@ import type { RouteRecordRaw } from 'vue-router';
 import HomePage from './../views/Home.vue';
 import About from './../views/About.vue';
 import E404 from './../components/E404.vue';
+import Login from './../views/auth/Login.vue';
+import Registration from './../views/auth/Registration.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -22,6 +24,26 @@ const routes: Array<RouteRecordRaw> = [
       layout: 'default',
     },
   },
+  {
+    name: 'auth.login',
+    path: '/login',
+    meta: {
+      guest: true,
+      layout: 'default',
+    },
+    component: Login,
+  },
+  {
+    name: 'auth.registration',
+    path: '/registration',
+
+    meta: {
+      guest: true,
+      layout: 'default',
+    },
+    component: Registration,
+  },
+
   {
     path: '/:any(.*)',
     component: E404,
