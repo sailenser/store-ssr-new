@@ -41,7 +41,7 @@ async function createExpressServer() {
       //2. Применяем HTML-преобразования Vite, добавляет /@vite для файлов в html в теге <script>
       template = await vite.transformIndexHtml(url, template);
 
-      // 3. Получаем функцию файла результата результата серверной сборки SSR
+      // 3. Запускаем серверную часть ssr и проучаем на выходе фунцию для создания ssr сервеной части
       const createServerApp = (await vite.ssrLoadModule('/src/entry-server.js')).default;
 
       const { app, router, apiCache } = await createServerApp({ url });
@@ -50,6 +50,7 @@ async function createExpressServer() {
       const noSsrPage = matched.some(r => r.meta.guest || r.meta.auth);
 
       if (!noSsrPage) {
+        // 4. Преобразуем html сгенерированый на сервере с учетом store и т.д.
         const innerHtml = await renderToString(app);
         template = template.replace(`<!--ssr-outlet-->`, innerHtml);
       }
@@ -59,12 +60,13 @@ async function createExpressServer() {
         apiCache,
       };
 
+      // 5. Вставляем данные кэша и страница ssr или нет
       template = template.replace(
         '<!--ssr-data-->',
         `<script>window.appServerData = ${serialize(serverData, { isJSON: true })}</script>`
       );
 
-      // 6. Отправить на сервер отрисованный HTML-код.
+      // 6. Отобразить на сервере отрисованный HTML-код.
       res.status(200).set({ 'Content-Type': 'text/html' }).end(template);
     } catch (e) {
       vite.ssrFixStacktrace(e);

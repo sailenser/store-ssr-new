@@ -1,0 +1,12 @@
+.app-fade-enter-active{
+    animation: appFade 0.2s;
+}
+
+.app-fade-leave-active{
+    animation: appFade 0.2s reverse;
+}
+
+@keyframes appFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
