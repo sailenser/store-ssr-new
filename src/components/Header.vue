@@ -7,14 +7,10 @@
       <ul class="page-header-nav__list">
         <li class="page-header-nav__item"></li>
         <li class="page-header-nav__item">
-          <RouterLink :to="{ name: 'about' }" class="page-header-nav__link">
-            О нас
-          </RouterLink>
+          <RouterLink :to="{ name: 'about' }" class="page-header-nav__link"> О нас </RouterLink>
         </li>
         <li class="page-header-nav__item">
-          <RouterLink :to="{ name: 'auth.login' }" class="page-header-nav__link">
-            Вход
-          </RouterLink>
+          <RouterLink :to="{ name: 'auth.login' }" class="page-header-nav__link"> Вход </RouterLink>
         </li>
         <li class="page-header-nav__item">
           <RouterLink :to="{ name: 'auth.registration' }" class="page-header-nav__link">

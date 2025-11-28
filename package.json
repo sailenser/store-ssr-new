@@ -8,14 +8,11 @@
     "build:dev": "npm run build:client:dev && npm run build:server:dev",
     "build:client:dev": "vite build --outDir dist-ssr/client",
     "build:server:dev": "vite build --outDir dist-ssr/server --ssr src/entry-server.js",
-
     "start:prod": "NODE_ENV=production node server.js",
     "build:prod": "npm run clean && npm run build:client:prod && npm run build:server:prod",
     "build:client:prod": "vite build --outDir dist-ssr/client --mode production",
     "build:server:prod": "vite build --outDir dist-ssr/server --ssr src/entry-server.js --mode production",
-
-    "clean": "rm -rf dist-ssr",
-
+    "clean:dist": "rm -rf dist-ssr",
     "lint": "eslint --ext .js,.vue,.ts --fix src",
     "lint:fix": "eslint --ext .js,.vue,.ts src/ --fix",
     "format": "prettier .  --write"
