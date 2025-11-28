@@ -8,11 +8,15 @@ import { createServer as createViteServer } from 'vite';
 import { renderToString } from 'vue/server-renderer';
 import serialize from 'serialize-javascript';
 
+const envFile = process.env.NODE_ENV === 'production'
+    ? '.env.production'
+    : '.env.dev';
+
 //Подгружаем конфиг .env
-dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), envFile) });
 
 // Constants
-const port = process.env.PORT || 4587;
+const port = process.env.NODE_ENV === 'production' ? process.env.PORT_PROD : process.env.PORT_DEV;
 const baseUrl = process.env.BASE_URL || '/';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
