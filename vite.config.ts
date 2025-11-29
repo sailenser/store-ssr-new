@@ -15,8 +15,4 @@ export default defineConfig({
     cssMinify: true,
     cssCodeSplit: true,
   },
-  // server: {
-  //   port: 5173,
-  //   allowedHosts: ['fronterbest.ru'],
-  // },
 });
