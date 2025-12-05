@@ -11,8 +11,8 @@ export default defineConfig({
   },
   build: {
     outDir: resolve('dist-ssr'),
-    minify: 'esbuild',
-    cssMinify: true,
-    cssCodeSplit: true,
+    // minify: 'esbuild',
+    // cssMinify: true,
+    // cssCodeSplit: true,
   },
 });

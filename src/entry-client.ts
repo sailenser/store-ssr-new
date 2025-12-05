@@ -1,5 +1,8 @@
 import { makeApp } from './app';
-import '@/assets/essential.css';
+import '@/assets/styles/reset.css';
+import '@/assets/styles/fonts.css';
+import '@/assets/styles/animations.css';
+import '@/assets/styles/essential.css';
 
 (async function () {
   const context = {
