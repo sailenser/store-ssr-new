@@ -21,3 +21,7 @@ npm install @vue/server-renderer compression dotenv express
 
 Для установки pinia и vue-router
 npm install pinia vue-router
+
+
+Git
+git push --force origin branch-name

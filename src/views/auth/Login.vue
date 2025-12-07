@@ -1,7 +1,3 @@
-<script setup lang="ts">
-  import '@/assets/styles/pages/login.css';
-</script>
-
 <template>
   <div class="page-login place">
     <div class="page-login__wrapper">

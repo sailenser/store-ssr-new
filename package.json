@@ -16,7 +16,10 @@
     "clean:dist": "rm -rf dist-ssr",
     "lint": "eslint --ext .js,.vue,.ts --fix src",
     "lint:fix": "eslint --ext .js,.vue,.ts src/ --fix",
-    "format": "prettier .  --write"
+    "format": "prettier .  --write",
+    "sass": "sass src/assets/styles/scss/index.scss src/assets/styles/css/index.css --no-source-map",
+    "sass:watch": "sass --watch src/assets/styles/scss/index.scss src/assets/styles/css/index.css --no-source-map",
+    "sass:build": "sass scss:css --no-source-map --style=compressed"
   },
   "dependencies": {
     "@vue/server-renderer": "^3.5.24",
@@ -39,6 +42,7 @@
     "eslint-plugin-vue": "^10.6.0",
     "globals": "^16.5.0",
     "prettier": "^3.6.2",
+    "sass": "^1.94.2",
     "serialize-javascript": "^7.0.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.47.0",

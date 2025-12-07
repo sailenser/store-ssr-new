@@ -1,0 +1,42 @@
+@use 'sass:math';
+@use 'sass:list';
+@use 'sass:meta';
+
+@function strip-units($number) {
+    @return math.div($number, $number * 0 + 1);
+}
+
+@function em($values...) {
+    // Создаем явный список из аргументов
+    $args: $values;
+
+    // Получаем последний элемент как контекст
+    $context: strip-units(list.nth($args, list.length($args)));
+
+    $result: ();
+    // Используем новый метод для получения разделителя списка
+    $separator: list.separator($args);
+
+    // Проходим по всем элементам кроме последнего
+    @for $i from 1 through list.length($args) - 1 {
+        $value: list.nth($args, $i);
+
+        @if meta.type-of($value) == 'number' {
+            $value: strip-units($value);
+            $result: list.append($result, math.div($value, $context) * 1em, $separator);
+        } @else if meta.type-of($value) == 'list' {
+            // Рекурсивно вызываем em для вложенного списка
+            $nested-list: list.append($value, $context);
+            $result: list.append($result, em($nested-list...), $separator);
+        } @else {
+            $result: list.append($result, $value, $separator);
+        }
+    }
+
+    // Возвращаем результат
+    @if list.length($result) == 1 {
+        @return list.nth($result, 1);
+    } @else {
+        @return $result;
+    }
+}
