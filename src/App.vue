@@ -24,7 +24,7 @@
     <component :is="layoutComponent">
       <RouterView v-slot="{ Component, route }">
         <Transition name="app-fade" mode="out-in">
-          <div v-if="Component" :key="route.matched[0].name">
+          <div v-if="Component" :key="route.matched[0].name" class="page-stage">
             <Suspense :key="route.matched[0].name">
               <component :is="Component"></component>
             </Suspense>
