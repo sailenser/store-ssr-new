@@ -1,3 +1,6 @@
+@use '../helpers/variables' as *;
+@use '../helpers/functions' as *;
+
 :root {
     --font-family-inter: Inter, sans-serif;
 }
@@ -24,42 +27,46 @@ body {
     flex-wrap: wrap;
     align-items: center;
     background-color: #fff;
-    padding: 12px 24px;
+    padding: em(12 24, $fz);
     border-bottom: 1px solid #e5e7eb;
-}
 
-.page-header__logo {
+  &__logo {
+    $fz: 20;
+    font-size: em($fz, $fz_base);
     color: #111827;
     font-weight: 700;
-    font-size: 20px;
     font-family: var(--font-family-inter);
     text-transform: uppercase;
     text-decoration: none;
+  }
 }
 
-.page-header-nav__list {
+.page-header-nav {
+  &__list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin-top: 0;
     margin-bottom: 0;
-}
+  }
 
-.page-header-nav__item {
-    margin-right: 10px;
-}
+  &__item {
+    margin-right: em(10, $fz);
+  }
 
-.page-header-nav__link {
-    font-size: 15px;
+  &__link {
+    $fz: 15;
+    font-size: em($fz, $fz_base);
     color: #374151;
     line-height: 1.5;
     font-weight: 500;
     text-decoration: none;
     font-family: var(--font-family-inter);
+  }
 }
 
 .page-footer {
     background: hsl(0, 0%, 13%);
     text-align: center;
-    padding: 15px;
+    padding: em(15, $fz);
 }

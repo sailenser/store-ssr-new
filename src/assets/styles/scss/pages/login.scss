@@ -10,7 +10,8 @@
     &__wrapper {
         width: 100%;
         max-width: em(448, $fz);
-        box-sizing: border-box;
+        margin-left: em(15, $fz);
+        margin-right: em(15, $fz);
         border-width: 1px;
         border-radius: em(24, $fz);
         border-style: solid;

@@ -118,14 +118,13 @@ body {
   flex-wrap: wrap;
   align-items: center;
   background-color: #fff;
-  padding: 12px 24px;
+  padding: 0.75em 1.5em;
   border-bottom: 1px solid #e5e7eb;
 }
-
 .page-header__logo {
+  font-size: 1.25em;
   color: #111827;
   font-weight: 700;
-  font-size: 20px;
   font-family: var(--font-family-inter);
   text-transform: uppercase;
   text-decoration: none;
@@ -138,13 +137,11 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
-
 .page-header-nav__item {
-  margin-right: 10px;
+  margin-right: 0.625em;
 }
-
 .page-header-nav__link {
-  font-size: 15px;
+  font-size: 0.9375em;
   color: #374151;
   line-height: 1.5;
   font-weight: 500;
@@ -155,7 +152,7 @@ body {
 .page-footer {
   background: hsl(0, 0%, 13%);
   text-align: center;
-  padding: 15px;
+  padding: 0.9375em;
 }
 
 .page-login {
@@ -167,7 +164,8 @@ body {
 .page-login__wrapper {
   width: 100%;
   max-width: 28em;
-  box-sizing: border-box;
+  margin-left: 0.9375em;
+  margin-right: 0.9375em;
   border-width: 1px;
   border-radius: 1.5em;
   border-style: solid;
