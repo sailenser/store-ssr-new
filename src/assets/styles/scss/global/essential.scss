@@ -30,39 +30,39 @@ body {
     padding: em(12 24, $fz);
     border-bottom: 1px solid #e5e7eb;
 
-  &__logo {
-    $fz: 20;
-    font-size: em($fz, $fz_base);
-    color: #111827;
-    font-weight: 700;
-    font-family: var(--font-family-inter);
-    text-transform: uppercase;
-    text-decoration: none;
-  }
+    &__logo {
+        $fz: 20;
+        font-size: em($fz, $fz_base);
+        color: #111827;
+        font-weight: 700;
+        font-family: var(--font-family-inter);
+        text-transform: uppercase;
+        text-decoration: none;
+    }
 }
 
 .page-header-nav {
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
-  &__item {
-    margin-right: em(10, $fz);
-  }
+    &__item {
+        margin-right: em(10, $fz);
+    }
 
-  &__link {
-    $fz: 15;
-    font-size: em($fz, $fz_base);
-    color: #374151;
-    line-height: 1.5;
-    font-weight: 500;
-    text-decoration: none;
-    font-family: var(--font-family-inter);
-  }
+    &__link {
+        $fz: 15;
+        font-size: em($fz, $fz_base);
+        color: #374151;
+        line-height: 1.5;
+        font-weight: 500;
+        text-decoration: none;
+        font-family: var(--font-family-inter);
+    }
 }
 
 .page-footer {
