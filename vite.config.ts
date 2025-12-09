@@ -11,8 +11,14 @@ export default defineConfig({
   },
   build: {
     outDir: resolve('dist-ssr'),
-    // minify: 'esbuild',
-    // cssMinify: true,
-    // cssCodeSplit: true,
+    target: 'esnext',
+    cssCodeSplit: true,
+    manifest: true,
+    rollupOptions: {
+      output: {
+        inlineDynamicImports: false,
+        manualChunks: undefined,
+      },
+    },
   },
 });

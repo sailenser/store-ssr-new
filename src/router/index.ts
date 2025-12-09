@@ -1,17 +1,11 @@
 import { createMemoryHistory, createWebHistory, createRouter } from 'vue-router';
 import type { RouteRecordRaw } from 'vue-router';
 
-import HomePage from './../views/Home.vue';
-import About from './../views/About.vue';
-import E404 from './../components/E404.vue';
-import Login from './../views/auth/Login.vue';
-import Registration from './../views/auth/Registration.vue';
-
 const routes: Array<RouteRecordRaw> = [
   {
     name: 'home',
     path: '/',
-    component: HomePage,
+    component: () => import('@/views/Home.vue'),
     meta: {
       layout: 'default',
     },
@@ -19,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     name: 'about',
     path: '/about',
-    component: About,
+    component: () => import('@/views/About.vue'),
     meta: {
       layout: 'default',
     },
@@ -31,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
       guest: true,
       layout: 'default',
     },
-    component: Login,
+    component: () => import('@/views/auth/Login.vue'),
   },
   {
     name: 'auth.registration',
@@ -41,12 +35,12 @@ const routes: Array<RouteRecordRaw> = [
       guest: true,
       layout: 'default',
     },
-    component: Registration,
+    component: () => import('@/views/auth/Registration.vue'),
   },
 
   {
     path: '/:any(.*)',
-    component: E404,
+    component: () => import('@/components/E404.vue'),
   },
 ];
 
