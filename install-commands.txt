@@ -25,3 +25,6 @@ npm install pinia vue-router
 
 Git
 git push --force origin branch-name
+
+Иконки список
+https://app.unpkg.com/@heroicons/react@2.2.0/files/24/outline

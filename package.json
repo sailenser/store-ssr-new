@@ -22,6 +22,7 @@
     "sass:build": "sass scss:css --no-source-map --style=compressed"
   },
   "dependencies": {
+    "@heroicons/vue": "^2.2.0",
     "@vue/server-renderer": "^3.5.24",
     "compression": "^1.8.1",
     "dotenv": "^17.2.3",

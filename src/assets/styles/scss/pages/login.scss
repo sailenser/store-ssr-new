@@ -57,7 +57,7 @@
         font-family: var(--font-family-inter);
     }
 
-    .page-login__input {
+    &__input {
         $fz: 16;
         font-size: em($fz, $fz_base);
         background-color: #f6f7f8;
@@ -67,7 +67,7 @@
         border-radius: em(16, $fz);
     }
 
-    .page-login__btn {
+    &__btn {
         $fz: 16;
         font-size: em($fz, $fz_base);
         color: #fff;
@@ -85,5 +85,21 @@
         &:hover {
             background-color: #1997f0e6;
         }
+    }
+
+    &__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__icon {
+        width: em(20, $fz);
+        height: em(20, $fz);
+        color: #94a3b8;
+        position: absolute;
+        top: 50%;
+        left: em(12, $fz);
+        transform: translateY(-50%);
     }
 }
