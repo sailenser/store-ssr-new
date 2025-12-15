@@ -39,6 +39,8 @@ app.use('*all', async (request, response) => {
 
     if (!noSsrPage) {
       const innerHtml = await renderToString(app);
+      console.log('Для ssr страниц при каждом заходе на страницу вставляем содержимое\n', innerHtml);
+      console.log('--------------------------------------------------------------------\n');
       page = page.replace(`<!--ssr-outlet-->`, innerHtml);
     }
 
